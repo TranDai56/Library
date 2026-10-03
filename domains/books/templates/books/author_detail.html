@@ -1,0 +1,18 @@
+<h1>{{ author.first_name }} {{ author.last_name }}</h1>
+
+<p>Ngày sinh: {{ author.date_of_birth }}</p>
+<p>Ngày mất: {{ author.date_of_death }}</p>
+
+<h2>Danh sách sách của tác giả</h2>
+
+{% for book in author.books.all %}
+    <p>
+        <a href="/books/{{ book.id }}/">
+            {{ book.title }}
+        </a>
+    </p>
+{% empty %}
+    <p>Tác giả này chưa có sách.</p>
+{% endfor %}
+
+<a href="/authors/">Quay lại danh sách tác giả</a>

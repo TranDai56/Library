@@ -1,0 +1,13 @@
+<h1>{{ book.title }}</h1>
+
+<p>Tác giả: {{ book.author }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Tóm tắt: {{ book.summary }}</p>
+<h2>Tình trạng kho</h2>
+
+{% for copy in book.copies.all %}
+    <p>
+        Mã bản sao: {{ copy.id }}
+        - Trạng thái: {{ copy.status }}
+    </p>
+{% endfor %}

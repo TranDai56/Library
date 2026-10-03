@@ -1,0 +1,9 @@
+<h1>Danh sách tác giả</h1>
+
+{% for author in authors %}
+    <p>
+        <a href="/authors/{{ author.id }}/">
+            {{ author.first_name }} {{ author.last_name }}
+        </a>
+    </p>
+{% endfor %}
